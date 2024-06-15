@@ -45,9 +45,7 @@ export const dataProvider: DataProvider = {
       ids.forEach((id) => params.append("id", id));
     }
 
-    const response = await fetch(
-      `${API_URL}/${resource}?${params.toString()}`,
-    );
+    const response = await fetch(`${API_URL}/${resource}?${params.toString()}`);
 
     if (response.status < 200 || response.status > 299) throw response;
 
